@@ -226,7 +226,7 @@ func (p *presence) hook(h host, name string) error {
 		}
 	}
 	if place == "" || event != "arrive" && event != "leave" {
-		h.Logf("report for a place that's no longer configured: %s", name)
+		h.Logf("report for a place that's no longer configured") // no place names in a plain-text log
 		return nil
 	}
 	p.mu.Lock()
